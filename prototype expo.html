@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Prototype Expo</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black;
+            color: whitesmoke;
+
+
+           
+        }
+         /* moving particle */
+         canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            pointer-events: none;
+        }
+        .main{
+            text-align: center;
+            
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.font{
+    
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+        
+        .card{
+            background-color: rgba(255, 255, 255, 0.088);
+            width: 600px;
+            max-width: 92vw;
+            height: auto;
+            border: 1px solid #ff3b5c;
+           margin:100px auto;
+           border-radius: 20px;
+           padding-bottom: 25px;
+         
+        }
+        .box-1{
+            background-color: #ff3b5c;
+            width: 530px;
+            max-width: calc(100% - 50px);
+            height: 50px;
+          margin: 25px;
+          display: flex;
+          align-items: center;
+          font-size: 30px;
+          border-radius: 20px;
+          padding-left: 20px;
+         
+        }
+        .second{
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .box-2{
+            background-color: #ff3b5c;
+            margin: 20px;
+            width: 120px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            border-radius: 20px;
+            padding-left: 10px;
+            
+
+        }
+        .box-3{
+            background-color: #ff3b5c;
+            width: 530px;
+            max-width: calc(100% - 40px - 120px);
+            height: 50px;
+          margin: 20px;
+          display: flex;
+          align-items: center;
+          font-size: 30px;
+          border-radius: 20px;
+          padding-left: 20px;
+        }
+        .second-font{
+            display: flex;
+            margin: 20px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .second-font p:first-child{
+            width: 120px;
+            margin: 0 20px 0 0;
+            padding-left: 10px;
+        }
+        p{
+            padding-left: 30px;
+           
+        }
+        .p-2{
+            padding-left: 20px;
+            margin-top: 8px;
+            flex: 1;
+        }
+        .box-4{
+            background-color: #ff3b5c;
+            width: 530px;
+            max-width: calc(100% - 50px);
+            height: 50px;
+          margin: 25px;
+          display: flex;
+          align-items: center;
+          font-size: 30px;
+          border-radius: 20px;
+          padding-left: 20px;
+        }
+        .btn{
+            text-align: center;
+        }
+        button{
+            margin-top: 15px;
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: 1px solid #ff3b5c;
+            background: transparent;
+            color: white;
+            cursor: pointer;
+         margin: auto;
+        }
+        button:hover{
+            background-color: #ff3b5c;
+            transform: scale(1.05);
+        }
+        .box-5{
+            background-color: #ff3b5c;
+            width: 530px;
+            max-width: calc(100% - 50px);
+            height: 50px;
+          margin: 25px;
+          display: flex;
+          align-items: center;
+          font-size: 30px;
+          border-radius: 20px;
+          padding-left: 20px;
+        }
+        .box-6{
+            background-color: #ff3b5c;
+            width: 530px;
+            max-width: calc(100% - 50px);
+            height: 50px;
+          margin: 25px;
+          display: flex;
+          align-items: center;
+          font-size: 30px;
+          border-radius: 20px;
+          padding-left: 20px;
+        }
+        @media (max-width: 768px){
+            .card{
+                width: 92vw;
+                margin: 40px auto;
+            }
+            .second{
+                flex-wrap: wrap;
+            }
+            .box-1, .box-4, .box-5, .box-6{
+                width: auto;
+                max-width: calc(100% - 32px);
+                margin: 16px;
+                font-size: 22px;
+                height: 44px;
+            }
+            .box-2, .box-3{
+                width: calc(50% - 24px);
+                margin: 16px 12px;
+                font-size: 22px;
+                height: 44px;
+            }
+            p{
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+           
+        }
+        @media (max-width: 480px){
+            .box-2, .box-3{
+                width: calc(100% - 32px);
+                margin: 16px;
+            }
+            .second-font{
+                flex-direction: column;
+                gap: 6px;
+                margin: 0 16px 16px;
+            }
+            .second-font p:first-child{
+                width: auto;
+                margin: 0;
+                padding-left: 0;
+            }
+            .p-2{
+                margin-top: 0;
+                padding-left: 50px;
+            }
+            button{
+                width: calc(100% - 32px);
+                margin: 12px 16px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+     <!--moving particles-->
+     <div class="part">
+        <canvas id="particles"></canvas>
+    </div>
+
+<div class="card">
+<div class="main">
+
+<h1 style="font-size: 40px;">PROTOTYPE<span style="color: #ff3b5c;"> EXPO</span></h1>
+</div>
+<div class="font">
+<div class="box-1">Description</div>
+<P>Prototype Expo is a platform where participants showcase their innovative projects and working models.</P>
+<div class="second">
+<div class="box-2">Team</div>
+
+
+<div class="box-3">Fees</div>
+</div>
+<div class="second-font">
+    <p>3-5 members</p>
+    <p class="p-2">₹200 per head </p>
+
+
+</div>
+<div class="box-4">Rules and Regulations</div>
+<div class="btn">
+    <a href="https://drive.google.com/file/d/1jBZraq-i7vGPivZQ48KB4bbl2pUsSsEu/view?usp=sharing" target="_blank">
+<button>RULE BOOK</button>
+</a>
+</div>
+
+
+<div class="box-5">Date</div>
+<p>26th March 2026</p>
+
+
+<div class="box-6">Contact Info</div>
+<p>1. S.Wasim Akram - +91 97897 77575<br>
+    2. Vasanth - +91 63838 63674</p>
+
+<div class="btn">
+    <a href="https://forms.gle/1uxk9nVioG6pp9Lk6" target="_blank">
+<button>Register</button></a>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+     <!--moving particles-->
+     <div class="particles">
+        <script>
+
+            const canvas = document.getElementById("particles");
+            const ctx = canvas.getContext("2d");
+
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            let particlesArray = [];
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 3;
+                    this.speedX = (Math.random() - 0.5) * 1;
+                    this.speedY = (Math.random() - 0.5) * 1;
+
+                    const colors = ["#ff003c", "#00f7ff", "#00ff9d", "#ff00ff"];
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    if (this.x > canvas.width || this.x < 0) {
+                        this.speedX *= -1;
+                    }
+
+                    if (this.y > canvas.height || this.y < 0) {
+                        this.speedY *= -1;
+                    }
+                }
+
+                draw() {
+
+                    ctx.fillStyle = "#ff3b5c";
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                for (let i = 0; i < 100; i++) {
+                    particlesArray.push(new Particle());
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                particlesArray.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+
+        </script>
+    </div>
+</body>
+</html>
