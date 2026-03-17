@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RoboKryon⚙️</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@200;400&family=Space+Mono:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet">
 
 
@@ -37,7 +37,8 @@
         /* container */
 
         .container {
-            width: min(1200px, calc(100vw - 32px));
+            width: 90%;
+            max-width: 1200px;
             margin: auto;
         }
 
@@ -97,10 +98,9 @@
 
 
         .hero {
-            position: relative;
             text-align: center;
             padding: 80px 20px;
-            height: 600px;
+            height: 700px;
 
 
         }
@@ -156,7 +156,7 @@
         /* card */
         .prize-card {
             position: relative;
-            width: min(320px, calc(100vw - 32px));
+            width: 320px;
             padding: 40px;
             text-align: center;
             border-radius: 20px;
@@ -205,7 +205,6 @@
             font-weight: bold;
             background: linear-gradient(45deg, #ff0000, #ffd700);
             -webkit-background-clip: text;
-            background-clip: text;
             color: transparent;
             margin: 10px 0;
         }
@@ -252,7 +251,7 @@
         }
 
         .card {
-            width: min(550px, calc(100vw - 32px));
+            width: 550px;
             background: #111;
             border-radius: 25px;
             padding: 20px;
@@ -268,9 +267,7 @@
             margin-top: 10px;
         }
 
-        .card .btn-explore {
-            display: inline-block;
-            text-decoration: none;
+        .card button {
             margin-top: 15px;
             padding: 10px 25px;
             border-radius: 25px;
@@ -278,10 +275,9 @@
             background: #ff3b5c;
             color: white;
             cursor: pointer;
-            transition: transform 0.2s ease;
         }
 
-        .card .btn-explore:hover {
+        .card button:hover {
             background-color: #ff3b5c;
             transform: scale(1.05);
         }
@@ -301,7 +297,7 @@
             padding: 25px;
             margin: auto;
             border-radius: 25px;
-            width: min(300px, calc(100vw - 32px));
+            width: 300px;
             border: 1px solid #ff3b5c55;
             box-shadow: 0 0 15px #ff3b5c;
         }
@@ -318,6 +314,23 @@
             flex-wrap: wrap;
             gap: 25px;
             justify-content: center;
+        }
+
+
+        .timeline-card {
+            background: #121217;
+            padding: 25px;
+            margin: auto;
+            border-radius: 25px;
+            width: 300px;
+            border: 1px solid #ff3b5c55;
+            box-shadow: 0 0 15px #ff3b5c;
+        }
+
+        .timeline-card-2 h3 {
+            font-family: "Audiowide";
+            color: #ff3b5c;
+            margin-bottom: 10px;
         }
 
         .timeline-card:hover {
@@ -385,13 +398,6 @@
         /* mobile */
 
         @media(max-width:768px) {
-            .container {
-                width: min(1200px, calc(100vw - 32px));
-            }
-
-            .navbar {
-                padding: 10px 16px;
-            }
 
             .nav-links {
                 display: none;
@@ -417,11 +423,11 @@
             }
 
             .card {
-                width: calc(100% - 0px);
+                width: 100%;
             }
 
             .timeline-card {
-                width: calc(100% - 0px);
+                width: 100%;
             }
 
             .event {
@@ -434,9 +440,8 @@
             .coin{
                 left: 50px;
             }
-            .department{
-                font-size: 20px;
-            }
+           .department{
+              font-size: 20px;
             
         }
     </style>
@@ -457,7 +462,7 @@
 
                 <ul class="nav-links" id="nav">
                     <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#event">EVENTS</a></li>
+                    <li><a href="#event ">EVENTS</a></li>
                     <li><a href="#schedule">SCHEDULE</a></li>
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
@@ -470,8 +475,8 @@
 
         <section class="hero" id="about">
             <div class="center-font">
-                <h1 style="font-size: 40px;" class="department">DEPARTMENT OF <span style="color: #ff3b5c;">R</span>OBOTICS & <span style="color: #ff3b5c;">A</span>UTOMATION</h1>
-                <h1 style="font-size: 50px;">ROBO<span>KRYON</span></h1>
+                <h1 style="font-size: 30px;" class="department" >DEPARTMENT OF <span style="color: #ff3b5c;">R</span>OBOTICS & <span style="color: #ff3b5c;">A</span>UTOMATION</h1>
+                <h1 style="font-size: 40px;">ROBO<span>KRYON</span></h1>
             </div>
             <p>INNOVATE | BUILD | COMPETE</p> 
             <img src="image/amount-removebg-preview.png" class="coin">
@@ -498,14 +503,15 @@
 
                 <div class="card">
                     <h3>DAY 1</h3>
-                    <img src="image/robo%20event.png">
-                    <a href="event%20page.html" target="_blank" class="btn-explore">Explore</a>
+                    <img src="image/robo event.png">
+                    <a href="event page.html" target="_blank"><button>Explore</button></a>
                 </div>
 
                 <div class="card">
                     <h3>DAY 2</h3>
                     <img src="image/technical.png">
-                    <a href="technical%20event.html" target="_blank" class="btn-explore">Explore</a>
+                    <a href="technical event.html" target="_blank">
+                        <button>Explore</button></a>
                 </div>
 
             </div>
@@ -577,7 +583,7 @@
 
                         S.Wasim Akram - +91-97897 77575<br>
 
-                        C.Shiju - +91-97871 99219<br>M.Rishab - +91-88701 03890</p>
+                        C.Shiju- +91-97871 99219<br>M.Rishab - +91-88701 03890</p>
                 </div>
 
                 <div class="contact-box">
@@ -662,13 +668,6 @@
 
         init();
         animate();
-
-        window.addEventListener("resize", function() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            particlesArray = [];
-            init();
-        });
 
     </script>
 
